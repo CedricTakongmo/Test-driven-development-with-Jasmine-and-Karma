@@ -59,6 +59,6 @@ describe('Controller: StackCtrl: describes an abstract data type that serves as 
         scope.stack = [{ firstname: "Peter", lastName: "Schneider"}];
         expect(scope.isEmpty()).toBe(false);
         scope.stack = [];
-        expect(scope.isEmpty()).toBe(true);
+        expect(scope.isEmpty()).toBe(true );
     });
 });
