@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Controller: MainCtrl', function () {
+describe('A specification suit forController: MainCtrl', function () {
 
   // load the controller's module
   beforeEach(module('tddApp'));
@@ -10,6 +10,13 @@ describe('Controller: MainCtrl', function () {
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
+    //setFixtures('<div id="taskForm" style="width:50px; height:50px; background-color: red;" />');
+     
+      /*var f = jasmine.getFixtures();
+        f.fixturesPath = 'base';
+        f.load('src/app/views/about.html');*/
+      
+        
     scope = $rootScope.$new();
     MainCtrl = $controller('MainCtrl', {
       $scope: scope
