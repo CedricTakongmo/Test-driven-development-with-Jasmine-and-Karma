@@ -22,8 +22,13 @@ describe('Controller: StackCtrl: describes an abstract data type that serves as 
                 firstname: "Peter",
                 lastName: "Schneider"
             }
-        ];
+        ];       
     }));
+    
+    afterEach(function () {
+        StackCtrl = null;
+        scope = null;
+    });
 
     it('specPush: should add a new item to a stack', function () {
         var stack = scope.stack,
