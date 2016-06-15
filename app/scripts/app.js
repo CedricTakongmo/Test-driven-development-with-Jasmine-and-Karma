@@ -27,6 +27,10 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
+      .when('/stackui', {
+        templateUrl: 'views/stackUI.html',
+        controller: 'StackuiCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
