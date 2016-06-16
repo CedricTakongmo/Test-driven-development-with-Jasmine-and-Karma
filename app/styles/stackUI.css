@@ -1,0 +1,18 @@
+.stackui-container{
+   margin-bottom: 30px;
+}
+.stackui-container .stackui-list{
+    border-color: transparent black black black;
+    border-style: solid solid solid solid;
+    border-width: 0px 4px 4px 4px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+.stackui-container .stackui-list > thead {
+    background-color: #616D79;
+    color:white;
+}
+.stackui-container .stackui-list > tbody > tr:nth-child(2n+1) > td,
+.stackui-list > tbody > tr:nth-child(2n+1) > th {
+    background-color: #f1f1f1;
+}

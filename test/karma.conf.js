@@ -37,7 +37,13 @@ module.exports = function(config) {
       // endbower
       "app/scripts/**/*.js",
       "test/mock/**/*.js",
-      "test/spec/**/*.js"
+      "test/spec/**/*.js",
+      {
+          pattern: "app/views/**/*.html",
+          watched: true, 
+          served: true, 
+          included: false
+      }
     ],
 
     // list of files / patterns to exclude

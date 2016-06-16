@@ -1,10 +1,32 @@
-<div class="stack-container">
-    <ul class="single_demo_menu">
-        <li ng-repeat=" person in stack" ng-bind-html-unsafe="opt.text" >
-            {{ person.text}}
-        </li>
-    </ul>
+<div class="stackui-container">
+    <h2 class="text-center">State of the Stack</h2>
+    <table class="stackui-list">
+        <thead>
+            <tr>
+                <th class="text-center">Firstnames</th>
+                <th class="text-center">Lastnames</th>
+            </tr>
+        </thead>
+        <tbody class="stackui-table-body">
+            <tr ng-repeat="person in stack">
+                <td class="text-center">{{ person.firstname}}</td>
+                <td class="text-center"> {{ person.lastname}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <form>
+        <div class="form-group">
+            <label for="firstname">Firstname:</label>
+            <input type="text" class="stackui-input-firstname form-control" name="firstname" ng-model="firstname">
+        </div>
+        <div class="form-group">
+            <label for="lastname">Lastname:</label>
+            <input type="text" class="stackui-input-lastname form-control" name="lastname" ng-model="lastname">
+        </div>
+        <div class="stackui-control text-center">
+            <button type="button" class="stackui-btn-add btn btn-primary" ng-click="add();">Add</button>
+            <button type="button" class="stackui-btn-remove-last btn btn-primary" ng-click="removeLast();">Remove last</button>
+        </div>
+    </form>
 </div>
-<button>Remove</button>
 
-<button>Add</button>

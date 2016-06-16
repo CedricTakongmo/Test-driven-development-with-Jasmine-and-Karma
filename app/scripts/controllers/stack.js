@@ -16,9 +16,12 @@ angular.module('tddApp')
             }
 
             $scope.pop = function () {
+                if ($scope.stack.length === 0) {
+                    throw new Error("Stack empty Exception");
+                }
                 return $scope.stack.pop();
             }
-            
+
             $scope.isEmpty = function () {
                 return 0 === $scope.stack.length;
             }
