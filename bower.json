@@ -16,5 +16,14 @@
     "jasmine-jquery": "~2.1.1"
   },
   "appPath": "app",
-  "moduleName": "tddApp"
+  "moduleName": "tddApp",
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "less/bootstrap.less",
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    }
+  }
 }
