@@ -38,7 +38,7 @@ describe('Controller: StackuiCtrl', function() {
             //assert
             last = scope.stack[scope.stack.length - 1];
             expect({ firstname: last.firstname, lastname: last
-                    .lastname }).toEqual(dummyPerson)
+                    .lastname }).toEqual(dummyPerson);
 
         });
 

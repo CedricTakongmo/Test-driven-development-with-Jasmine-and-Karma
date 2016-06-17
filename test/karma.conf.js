@@ -70,11 +70,22 @@ module.exports = function(config) {
       "karma-firefox-launcher",  
       "karma-chrome-launcher",
       "karma-phantomjs-launcher",
-      "karma-jasmine"
+      "karma-jasmine",
+      "karma-coverage"
     ],
+    coverageReporter: {
+      //type: 'text'
+    },
+    
     reporters: [
-        'dots'
+        'progress', 
+        'coverage'
     ],
+    
+    preprocessors: {
+        "test/spec/**/*.js": ['coverage']
+    },
+    
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
     singleRun: false,
