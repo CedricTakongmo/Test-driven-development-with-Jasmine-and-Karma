@@ -1,3 +1,4 @@
+/*globals $*/
 'use strict';
 
 describe('Controller: StackuiCtrl', function() {
@@ -30,9 +31,9 @@ describe('Controller: StackuiCtrl', function() {
             //add new person
             dummyPerson = new Person(Math.random().toString(), Math.random().toString());
 
-            $container.find(".stackui-input-firstname").val(dummyPerson.firstname).trigger('input')
-                .end().find(".stackui-input-lastname").val(dummyPerson.lastname).trigger('input')
-                .end().find(".stackui-btn-add").click();
+            $container.find('.stackui-input-firstname').val(dummyPerson.firstname).trigger('input')
+                .end().find('.stackui-input-lastname').val(dummyPerson.lastname).trigger('input')
+                .end().find('.stackui-btn-add').click();
 
             //assert
             last = scope.stack[scope.stack.length - 1];
@@ -46,16 +47,16 @@ describe('Controller: StackuiCtrl', function() {
             var $view, last;
             $view = getTemplate();
 
-            $compile($view)(scope).find(".stackui-btn-remove-last").click();
+            $compile($view)(scope).find('.stackui-btn-remove-last').click();
 
             last = scope.stack[scope.stack.length - 1];
             expect({ firstname: last.firstname, lastname: last.lastname })
-                    .toEqual({ firstname: "Max",lastname: "Lahm" });
+                    .toEqual({ firstname: 'Max',lastname: 'Lahm' });
 
         });
 
     function getTemplate() {
-        jasmine.getFixtures().fixturesPath = "base/app/views";
+        jasmine.getFixtures().fixturesPath = 'base/app/views';
         jasmine.getFixtures().load('stackUI.html');
         return $(jasmine.getFixtures().fixturesCache_['stackUI.html']);
     }
