@@ -8,7 +8,7 @@ describe('Controller: StackuiCtrl', function() {
 
     var StackuiCtrl,
         scope,
-        $compile;
+        $compileAngular;
 
     // Initialize the controller and a mock scope
     beforeEach(inject(function($controller, $rootScope,
@@ -17,7 +17,7 @@ describe('Controller: StackuiCtrl', function() {
         StackuiCtrl = $controller('StackuiCtrl', {
             $scope: scope
         });
-        $compile = _$compile_;
+        $compileAngular = _$compile_;
     }));
 
     it('should insert new object-person in the stack after clicking on "Add"',
@@ -26,7 +26,7 @@ describe('Controller: StackuiCtrl', function() {
             var $view, $container, dummyPerson, last;
 
             $view = getTemplate();
-            $container = $compile($view)(scope);
+            $container = $compileAngular($view)(scope);
 
             //add new person
             dummyPerson = new Person(Math.random().toString(), Math.random().toString());
@@ -47,7 +47,7 @@ describe('Controller: StackuiCtrl', function() {
             var $view, last;
             $view = getTemplate();
 
-            $compile($view)(scope).find('.stackui-btn-remove-last').click();
+            $compileAngular($view)(scope).find('.stackui-btn-remove-last').click();
 
             last = scope.stack[scope.stack.length - 1];
             expect({ firstname: last.firstname, lastname: last.lastname })
