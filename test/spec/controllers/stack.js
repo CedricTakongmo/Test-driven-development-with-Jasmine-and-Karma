@@ -64,48 +64,48 @@ describe('Controller: StackCtrl: describes an abstract data type that serves as 
                         }).toThrow(new Error('Stack empty Exception'));
                     });
 
-            /* it('specIsEmpty: if this stack is empty; Returns "true" if and only if this stack contains no items; "false" otherwise.',
-             function () {
-             scope.stack = [new Person('Peter', 'Schneider')];
-             //call of function to test and assert
-             expect(scope.isEmpty()).toBe(false);
-             scope.stack = [];
-             //call of function to test
-             expect(scope.isEmpty()).toBe(true);
-             });
-             
-             it("should receive a successful response", function () {
-             var configuration = {
-             url: "ProductData.json",
-             remainingCallTime: 30000
-             };
-             spyOn($, "ajax").and.callFake(function (e) {
-             e.success({}); 
-             });
-             
-             var callbacks = {
-             checkForInformation: jasmine.createSpy(),
-             displayErrorMessage: jasmine.createSpy(),
-             };
-             
-             sendRequest(callbacks, configuration);
-             expect(callbacks.checkForInformation).toHaveBeenCalled();  //Verifies this was called
-             expect(callbacks.displayErrorMessage).not.toHaveBeenCalled();  //Verifies this was NOT called
-             });
-             
-             function sendRequest(callbacks, configuration) {
-             $.ajax({
-             url: configuration.url,
-             dataType: "json",
-             success: function (data) {
-             callbacks.checkForInformation(data);
-             },
-             error: function (data) {
-             callbacks.displayErrorMessage();
-             },
-             timeout: configuration.remainingCallTime
-             });
-             }*/
+            it('specIsEmpty: if this stack is empty; Returns "true" if and only if this stack contains no items; "false" otherwise.',
+                    function () {
+                        scope.stack = [new Person('Peter', 'Schneider')];
+                        //call of function to test and assert
+                        expect(scope.isEmpty()).toBe(false);
+                        scope.stack = [];
+                        //call of function to test
+                        expect(scope.isEmpty()).toBe(true);
+                    });
+
+            it("should receive a successful response", function () {
+                var configuration = {
+                    url: "ProductData.json",
+                    remainingCallTime: 30000
+                };
+                spyOn($, "ajax").and.callFake(function (e) {
+                    e.success({});
+                });
+
+                var callbacks = {
+                    checkForInformation: jasmine.createSpy(),
+                    displayErrorMessage: jasmine.createSpy(),
+                };
+
+                sendRequest(callbacks, configuration);
+                expect(callbacks.checkForInformation).toHaveBeenCalled();  //Verifies this was called
+                expect(callbacks.displayErrorMessage).not.toHaveBeenCalled();  //Verifies this was NOT called
+            });
+
+            function sendRequest(callbacks, configuration) {
+                $.ajax({
+                    url: configuration.url,
+                    dataType: "json",
+                    success: function (data) {
+                        callbacks.checkForInformation(data);
+                    },
+                    error: function (data) {
+                        callbacks.displayErrorMessage();
+                    },
+                    timeout: configuration.remainingCallTime
+                });
+            }
             function People() {
                 return [{
                         firstname: 'Cedric',
