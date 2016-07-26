@@ -1,3 +1,4 @@
+/*globals $*/
 'use strict';
 
 describe('Controller: StackCtrl: describes an abstract data type that serves as a collection of elements',
@@ -74,12 +75,12 @@ describe('Controller: StackCtrl: describes an abstract data type that serves as 
                         expect(scope.isEmpty()).toBe(true);
                     });
 
-            it("should receive a successful response", function () {
+            it('should receive a successful response', function () {
                 var configuration = {
-                    url: "ProductData.json",
+                    url: 'ProductData.json',
                     remainingCallTime: 30000
                 };
-                spyOn($, "ajax").and.callFake(function (e) {
+                spyOn($, 'ajax').and.callFake(function (e) {
                     e.success({});
                 });
 
@@ -96,11 +97,11 @@ describe('Controller: StackCtrl: describes an abstract data type that serves as 
             function sendRequest(callbacks, configuration) {
                 $.ajax({
                     url: configuration.url,
-                    dataType: "json",
+                    dataType: 'json',
                     success: function (data) {
                         callbacks.checkForInformation(data);
                     },
-                    error: function (data) {
+                    error: function () {
                         callbacks.displayErrorMessage();
                     },
                     timeout: configuration.remainingCallTime
