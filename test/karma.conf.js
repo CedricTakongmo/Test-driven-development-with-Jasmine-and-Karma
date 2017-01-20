@@ -62,7 +62,9 @@ module.exports = function(config) {
     // - PhantomJS
     // - IE (only Windows)
     browsers: [
-      "PhantomJS"
+      "PhantomJS",
+      //"Chrome",
+      //"Firefox"
     ],
 
     // Which plugins to enable
@@ -76,7 +78,8 @@ module.exports = function(config) {
     coverageReporter: {
       //type: 'text'
     },
-    
+    //Start coverage with:
+    //python -m SimpleHTTPServer 8000  
     reporters: [
         'progress', 
         'coverage'
