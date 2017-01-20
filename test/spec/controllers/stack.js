@@ -76,9 +76,10 @@ describe('Controller: StackCtrl: describes an abstract data type that serves as 
                     });
 
             it('should receive a successful response', function () {
-                var configuration = {
+                var ajaxConfig = {
                     url: 'ProductData.json',
-                    remainingCallTime: 30000
+                    remainingCallTime: 30000,
+                    dataType: 'json',
                 };
                 spyOn($, 'ajax').and.callFake(function (e) {
                     e.success({});
@@ -89,7 +90,7 @@ describe('Controller: StackCtrl: describes an abstract data type that serves as 
                     displayErrorMessage: jasmine.createSpy(),
                 };
 
-                sendRequest(callbacks, configuration);
+                sendRequest(callbacks, ajaxConfig);
                 expect(callbacks.checkForInformation).toHaveBeenCalled();  //Verifies this was called
                 expect(callbacks.displayErrorMessage).not.toHaveBeenCalled();  //Verifies this was NOT called
             });
@@ -97,7 +98,7 @@ describe('Controller: StackCtrl: describes an abstract data type that serves as 
             function sendRequest(callbacks, configuration) {
                 $.ajax({
                     url: configuration.url,
-                    dataType: 'json',
+                    dataType: configuration.dataType,
                     success: function (data) {
                         callbacks.checkForInformation(data);
                     },
